@@ -5,15 +5,15 @@ from ..hashing import Hash
 from sqlalchemy.orm import Session
 
 router = APIRouter(
-    tags= ['Authentication']
+    tags= ['Auth']
 
 )
 
 
-@router.post('/Signin')
-def signin(request: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(database.get_db)):
-    user = db.query(models.Customer).filter(models.Customer.email == request.username).first()
-    
+@router.post('/Login')
+def login(request: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(database.get_db)):
+    user = db.query(models.Designer).filter(models.Designer.email == request.username).first() 
+            
     if not user:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=f"Invalid details" )
     
@@ -22,9 +22,9 @@ def signin(request: OAuth2PasswordRequestForm = Depends(), db: Session = Depends
                
     
     access_token = JWT_Token.create_access_token(data={"sub": user.email})
-    return {"access_token": access_token, "token_type": "Signed in successfully"}
+    return {"access_token": access_token, "token_type": "Signed in successfully..."}
 
 
-@router.post("/Signout")
-def Signout():
-    return  "Signed out successfully"
+@router.post("/Logout")
+def logout():
+    return  "Signed out successfully..."
