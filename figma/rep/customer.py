@@ -12,7 +12,7 @@ def create(insert: schemas.Customer, db: Session ):
     db.refresh(new_user)
 
     
-    return new_user, "Signed up sucessfully"
+    return new_user, "Signed up sucessfully..."
     
 
 def get_a_user(email: str, response: Response, db: Session):

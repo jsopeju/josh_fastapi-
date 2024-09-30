@@ -11,7 +11,7 @@ def create(insert: schemas.Designer, db: Session ):
     db.refresh(new_user)
 
     
-    return new_user, "Signed up sucessfully"
+    return new_user, "Signed up sucessfully..."
     
 
 def get_a_designer(email: str, response: Response, db: Session):

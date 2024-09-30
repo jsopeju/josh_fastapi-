@@ -11,7 +11,7 @@ def create(insert: schemas.Complaint, db: Session ):
     db.refresh(new_user)
 
     
-    return new_user, "Signed up sucessfully"
+    return new_user
     
 
 def get_a_user(email: str, response: Response, db: Session):
@@ -31,7 +31,7 @@ def update(email: str, request: schemas.Complaint, db: Session):
 
      db.commit()
 
-     return  'Details successfully updated'
+     return 'Details successfully updated...'
 
 def eliminate(email: str, db: Session):
      blog = db.query(models.Complaint).filter(models.Complaint.email == email)
@@ -41,6 +41,6 @@ def eliminate(email: str, db: Session):
     
      db.commit()
 
-     return {'detail': 'Complaint successfully deleted'}
+     return 'Complaint successfully deleted'
 
 
