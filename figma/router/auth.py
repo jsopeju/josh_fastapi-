@@ -27,4 +27,4 @@ def login(request: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(
 
 @router.post("/Logout")
 def logout():
-    return  "Signed out successfully...."
+    return  "Signed out successfully..."
