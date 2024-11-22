@@ -6,7 +6,8 @@ from ..hashing import Hash
 
 def create(insert: schemas.Customer, db: Session ):
     new_user = models.Customer(name=insert.name,email=insert.email,password=Hash.encrypt(insert.password),gender=insert.gender,
-                              country=insert.country,product_bought=insert.product_bought,mobile_number=insert.mobile_number,rank=insert.rank)
+                              country=insert.country,product_bought=insert.product_bought,price_bought=insert.price_bought,
+                              mobile_number=insert.mobile_number,rank=insert.rank)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)

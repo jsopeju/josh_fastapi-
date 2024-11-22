@@ -5,7 +5,7 @@ from .. import schemas, models
 
 def create(insert: schemas.Complaint, db: Session ):
     new_user = models.Complaint(name=insert.name,email=insert.email,message=insert.message,gender=insert.gender,country=insert.country,product_bought=insert.product_bought,
-                               mobile_number=insert.mobile_number,rank=insert.rank)
+                                price_bought=insert.price_bought,mobile_number=insert.mobile_number,rank=insert.rank)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
