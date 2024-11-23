@@ -48,3 +48,19 @@ class   Complaint(Base):
     price_boughtt = Column(String)
     mobile_number = Column(Integer)
     rank = Column(String)
+
+
+
+class   Product(Base):
+
+
+    __tablename__ = 'Products'
+
+    id = Column(Integer, primary_key=True, index=True)
+    product_name = Column(String)
+    product_price = Column(String)
+    product_colour = Column(String)
+    product_size = Column(String)
+    product_category = Column(String)
+    product_designer = Column(String)
+
