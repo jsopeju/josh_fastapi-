@@ -15,7 +15,7 @@ class Customer(Base):
     gender = Column(String)
     country = Column(String)
     product_bought = Column(String)
-    price_bought = Column(Integer)
+    price_bought = Column(String)
     mobile_number = Column(Integer)
     rank = Column(String)
 
@@ -32,7 +32,7 @@ class   Designer(Base):
     gender = Column(String)
     country = Column(String)
     product_sold = Column(String)
-    price_sold = Column(Integer)
+    price_sold = Column(String)
     mobile_number = Column(Integer)
     rank = Column(String)
 

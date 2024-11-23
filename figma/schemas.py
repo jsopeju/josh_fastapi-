@@ -10,7 +10,7 @@ class Customer(BaseModel):
     gender: str
     country: str
     product_bought: str
-    price_bought: int
+    price_bought: str
     mobile_number: int
     rank: str
 
@@ -26,7 +26,7 @@ class Designer(BaseModel):
     gender: str
     country: str
     product_sold: str
-    price_sold: int
+    price_sold: str
     mobile_number: int
     rank: str
 
@@ -43,7 +43,7 @@ class Complaint(BaseModel):
     gender: str
     country: str
     product_bought: str
-    price_bought: int
+    price_bought: str
     mobile_number: int
     rank: str
 
