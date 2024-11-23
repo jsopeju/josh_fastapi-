@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Depends, status, Response, HTTPException
-from .router import authentication, auth, complaint, customer, designer
+from .router import auth, authentication,  complaint, customer, designer, product
 from . import  models
 from .database import engine, get_db
 from sqlalchemy.orm import Session
@@ -11,8 +11,9 @@ app = FastAPI()
 models.Base.metadata.create_all(engine)
 
 
-app.include_router(authentication.router)
 app.include_router(auth.router)
+app.include_router(authentication.router)
 app.include_router(complaint.router)
 app.include_router(customer.router)
 app.include_router(designer.router)
+app.include_router(product.router)
