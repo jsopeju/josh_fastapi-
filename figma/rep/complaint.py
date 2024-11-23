@@ -11,7 +11,7 @@ def create(insert: schemas.Complaint, db: Session ):
     db.refresh(new_user)
 
     
-    return new_user
+    return new_user, "Your message has been successfully uploaded"
     
 
 def get_a_user(email: str, response: Response, db: Session):

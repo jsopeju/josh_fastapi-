@@ -9,8 +9,6 @@ class Customer(BaseModel):
     password: str
     gender: str
     country: str
-    product_bought: str
-    price_bought: str
     mobile_number: int
     rank: str
 
@@ -25,8 +23,6 @@ class Designer(BaseModel):
     password: str
     gender: str
     country: str
-    product_sold: str
-    price_sold: str
     mobile_number: int
     rank: str
 

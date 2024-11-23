@@ -14,8 +14,6 @@ class Customer(Base):
     password = Column(Boolean)
     gender = Column(String)
     country = Column(String)
-    product_bought = Column(String)
-    price_bought = Column(String)
     mobile_number = Column(Integer)
     rank = Column(String)
 
@@ -31,8 +29,6 @@ class   Designer(Base):
     password = Column(Boolean)
     gender = Column(String)
     country = Column(String)
-    product_sold = Column(String)
-    price_sold = Column(String)
     mobile_number = Column(Integer)
     rank = Column(String)
 
