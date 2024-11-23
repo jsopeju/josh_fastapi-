@@ -19,13 +19,13 @@ def create_prodouct(insert: schemas.Product, db: Session = Depends(database.get_
 
 @router.get('/', response_model=List[schemas.Product])
 def get_products(db: Session = Depends(database.get_db)):
-    users = db.query(models.Product).all()
-    return users
+    products = db.query(models.Product).all()
+    return products
 
 
 @router.get('/name', status_code=200, response_model=schemas.Product)
 def get_product(name, respone: Response, db: Session = Depends(database.get_db)):
-    return product.get_a_user(name, respone, db)
+    return product.get_a_product(name, respone, db)
 
 @router.put('/name', status_code=status.HTTP_202_ACCEPTED)
 def update_product(name: str, request: schemas.Customer, db: Session = Depends(database.get_db)):
