@@ -49,9 +49,9 @@ class GetUser(Complaint):
 
 class Product(BaseModel):
     id: int
-    product_nane: str
+    product_name: str
     product_price: str
-    product_colour: str
+    product_color: str
     product_size: str
     product_category: str
     product_designer: str

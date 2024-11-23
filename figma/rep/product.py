@@ -5,7 +5,7 @@ from .. import schemas, models
 
 
 def create(insert: schemas.Product, db: Session ):
-    new_product = models.Product(product_name=insert.product_nane, product_price=insert.product_price, product_colour=insert.product_colour,
+    new_product = models.Product(product_name=insert.product_name, product_price=insert.product_price, product_colour=insert.product_color,
                                  product_size=insert.product_size, product_category=insert.product_category, product_designe=insert.product_designer)
     db.add(new_product)
     db.commit()
