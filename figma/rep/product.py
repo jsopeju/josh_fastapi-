@@ -4,7 +4,7 @@ from .. import schemas, models
 
 
 
-def create(insert: schemas.Product, db: Session ):
+def add_product(insert: schemas.Product, db: Session ):
     new_product = models.Product(product_name=insert.product_name, product_price=insert.product_price, product_colour=insert.product_color,
                                  product_size=insert.product_size, product_category=insert.product_category, product_designer=insert.product_designer)
     db.add(new_product)
@@ -24,7 +24,7 @@ def get_a_product(name: str, response: Response, db: Session):
 
     return product
 
-def update(name: str, request: schemas.Product, db: Session):
+def update_product(name: str, request: schemas.Product, db: Session):
      product = db.query(models.Product).filter(models.Product.product_name == name)
      if not product.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Product with name {name} doesn't exist")
@@ -34,7 +34,7 @@ def update(name: str, request: schemas.Product, db: Session):
 
      return  'Product details successfully updated'
 
-def eliminate(name: str, db: Session):
+def eliminate_product(name: str, db: Session):
      blog = db.query(models.Product).filter(models.Product.product_name == name)
      if not blog.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Product with name {name} doesn't exist")

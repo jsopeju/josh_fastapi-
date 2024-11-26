@@ -13,8 +13,8 @@ router = APIRouter(
 
 
 @router.post('/')
-def create_prodouct(insert: schemas.Product, db: Session = Depends(database.get_db)):
-    return product.create(insert, db)
+def add_prodouct(insert: schemas.Product, db: Session = Depends(database.get_db)):
+    return product.add_product(insert, db)
     
 
 @router.get('/', response_model=List[schemas.Product])
@@ -29,8 +29,8 @@ def get_product(name, respone: Response, db: Session = Depends(database.get_db))
 
 @router.put('/name', status_code=status.HTTP_202_ACCEPTED)
 def update_product(name: str, request: schemas.Customer, db: Session = Depends(database.get_db)):
-    return product.update(name, request, db)
+    return product.update_product(name, request, db)
 
 @router.delete('/name', status_code=status.HTTP_204_NO_CONTENT)
 def del_product(name: str, db: Session =  Depends(database.get_db)):
-    return product.eliminate(name, db)
+    return product.eliminate_product(name, db)
