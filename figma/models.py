@@ -58,8 +58,9 @@ class   Product(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     product_name = Column(String)
-    product_price = Column(String)
+    product_description = Column(String)
     product_colour = Column(String)
+    product_price = Column(String)
     product_size = Column(String)
     product_category = Column(String)
     product_designer = Column(String)
