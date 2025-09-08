@@ -23,6 +23,7 @@ class Designer(BaseModel):
     password: str
     gender: str
     country: str
+    designer_category: str
     mobile_number: int
     rank: str
 

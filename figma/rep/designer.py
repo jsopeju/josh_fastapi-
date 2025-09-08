@@ -5,7 +5,7 @@ from ..hashing import Hash
 
 def create(insert: schemas.Designer, db: Session ):
     new_user = models.Designer(name=insert.name,email=insert.email,password=Hash.encrypt(insert.password),gender=insert.gender,
-                              country=insert.country,mobile_number=insert.mobile_number,rank=insert.rank)
+                              country=insert.country,designer_category=insert.designer_category,mobile_number=insert.mobile_number,rank=insert.rank)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)

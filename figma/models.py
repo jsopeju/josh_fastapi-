@@ -29,6 +29,7 @@ class   Designer(Base):
     password = Column(Boolean)
     gender = Column(String)
     country = Column(String)
+    designer_category = Column(String)
     mobile_number = Column(Integer)
     rank = Column(String)
 
