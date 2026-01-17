@@ -54,7 +54,7 @@ class Product(BaseModel):
     product_description: str
     product_price: str
     product_shipping_price: int
-    product_color: str
+    product_colour: str
     product_size: str
     product_category: str
     product_designer: str

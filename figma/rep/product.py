@@ -5,8 +5,8 @@ from .. import schemas, models
 
 
 def add_product(insert: schemas.Product, db: Session ):
-    new_product = models.Product(product_name=insert.product_name,product_description=insert.product_description, product_price=insert.product_price, product_colour=insert.product_color,
-                                product_shippingw_price=insert.product_shipping_price, product_size=insert.product_size, product_category=insert.product_category, product_designer=insert.product_designer)
+    new_product = models.Product(product_name=insert.product_name,product_description=insert.product_description, product_price=insert.product_price, product_colour=insert.product_colour,
+                                product_shipping_price=insert.product_shipping_price, product_size=insert.product_size, product_category=insert.product_category, product_designer=insert.product_designer)
     db.add(new_product)
     db.commit()
     db.refresh(new_product)

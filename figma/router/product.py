@@ -28,7 +28,7 @@ def get_product(name, respone: Response, db: Session = Depends(database.get_db))
     return product.get_a_product(name, respone, db)
 
 @router.put('/name', status_code=status.HTTP_202_ACCEPTED)
-def update_product(name: str, request: schemas.Customer, db: Session = Depends(database.get_db)):
+def update_product(name: str, request: schemas.Product, db: Session = Depends(database.get_db)):
     return product.update_product(name, request, db)
 
 @router.delete('/name', status_code=status.HTTP_204_NO_CONTENT)
